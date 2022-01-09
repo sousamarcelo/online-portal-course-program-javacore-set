@@ -4,18 +4,24 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-public class Studant {
+public class Student {
 	
 	private Integer number;
 	private String name;
 	private String teachersName;
+	private Character course;
 	
-	Set<Studant> studants = new HashSet<Studant>();
+	Set<Student> studants = new HashSet<Student>();
 	
-	public Studant(Integer number, String name, String teacheName) {
+	public Student() {
+		
+	}
+	
+	public Student(Integer number, String name, String teacheName, Character course) {
 		this.number = number;
 		this.name = name;
 		this.teachersName = teacheName;
+		this.course = course;
 	}
 
 	public Integer getNumber() {
@@ -42,7 +48,7 @@ public class Studant {
 		this.teachersName = teachersName;
 	}
 	
-	public Set<Studant> getStudant(){
+	public Set<Student> getStudant(){
 		return studants;
 	}
 
@@ -59,7 +65,7 @@ public class Studant {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Studant other = (Studant) obj;
+		Student other = (Student) obj;
 		return Objects.equals(number, other.number);
 	}
 
