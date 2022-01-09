@@ -1,15 +1,21 @@
 package model.entitie;
 
+import java.util.HashSet;
 import java.util.Objects;
+import java.util.Set;
 
-public class Studants {
+public class Studant {
 	
 	private Integer number;
 	private String name;
+	private String teachersName;
 	
-	public Studants(Integer number, String name) {
+	Set<Studant> studants = new HashSet<Studant>();
+	
+	public Studant(Integer number, String name, String teacheName) {
 		this.number = number;
 		this.name = name;
+		this.teachersName = teacheName;
 	}
 
 	public Integer getNumber() {
@@ -27,6 +33,18 @@ public class Studants {
 	public void setName(String name) {
 		this.name = name;
 	}
+	
+	public String getTEachersName() {
+		return teachersName;
+	}
+	
+	public void setTeachersName(String teachersName) {
+		this.teachersName = teachersName;
+	}
+	
+	public Set<Studant> getStudant(){
+		return studants;
+	}
 
 	@Override
 	public int hashCode() {
@@ -41,7 +59,7 @@ public class Studants {
 			return false;
 		if (getClass() != obj.getClass())
 			return false;
-		Studants other = (Studants) obj;
+		Studant other = (Studant) obj;
 		return Objects.equals(number, other.number);
 	}
 
